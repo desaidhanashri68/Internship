@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Special Menu - The Delicious Bistro</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Isotope CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.min.css">
+  <!-- Custom CSS -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+    }
+    .menu-box {
+      padding: 60px 0;
+    }
+    .heading-title {
+      margin-bottom: 30px;
+    }
+    .special-menu {
+      margin-bottom: 30px;
+    }
+    .filter-button-group button {
+      margin: 5px;
+      padding: 8px 15px;
+      border: none;
+      background-color: #777;
+      color: white;
+      cursor: pointer;
+    }
+    .filter-button-group button.active {
+      background-color: #333;
+    }
+    .special-list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .special-grid {
+      padding: 15px;
+    }
+    .gallery-single {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease-in-out;
+    }
+    .gallery-single:hover {
+      transform: scale(1.05);
+    }
+    .gallery-single img {
+      max-width: 100%;
+      height: auto;
+    }
+    .why-text {
+      padding: 15px;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      transition: opacity 0.3s ease-in-out;
+      opacity: 0;
+    }
+    .gallery-single:hover .why-text {
+      opacity: 1;
+    }
+    .heading-title {
+  margin-bottom: 30px;
+  padding-top: 40px; /* Add some spacing from the background image */
+  color:red; /* Text color */
+}
+
+.heading-title h2 {
+  font-size: 36px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.heading-title p {
+  font-size: 18px;
+  color: blue;
+  max-width: 600px;
+  margin: 0 auto;
+}
+  </style>
+</head>
+<body>
+  <div class="menu-box">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="heading-title text-center">
+            <h2>Special Menu</h2>
+            <p>our speciality is here</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="special-menu text-center">
+            <div class="button-group filter-button-group">
+              <button class="active" data-filter="*">All</button>
+              <button data-filter=".drinks">Drinks</button>
+              <button data-filter=".lunch">Lunch</button>
+              <button data-filter=".dinner">Dinner</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row special-list">
+        <!-- Drinks -->
+        <div class="col-lg-4 col-md-6 special-grid drinks">
+          <div class="gallery-single fix">
+            <img src="images/img-01.jpg" class="img-fluid" alt="Special Drink 1">
+            <div class="why-text">
+              <h4>Special Drink </h4>
+              <p>our speciality in Drink</p>
+              <h5>$7.79</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 special-grid drinks">
+          <div class="gallery-single fix">
+            <img src="images/img-02.jpg" class="img-fluid" alt="Special Drink 2">
+            <div class="why-text">
+              <h4>Special Drink 2</h4>
+              <p>Our speciallity in Drink</p>
+              <h5>$9.79</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 special-grid drinks">
+          <div class="gallery-single fix">
+            <img src="images/img-03.jpg" class="img-fluid" alt="Special Drink 3">
+            <div class="why-text">
+              <h4>Special Drink 3</h4>
+              <p>our Speciallity in Drink</p>
+              <h5>$10.79</h5>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Lunch -->
+        <div class="col-lg-4 col-md-6 special-grid lunch">
+          <div class="gallery-single fix">
+            <img src="images/img-04.jpg" class="img-fluid" alt="Special Lunch 1">
+            <div class="why-text">
+              <h4>Special Lunch </h4>
+              <p>our speciality in lunch</p>
+              <h5>$15.79</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 special-grid lunch">
+          <div class="gallery-single fix">
+            <img src="images/img-05.jpg" class="img-fluid" alt="Special Lunch 2">
+            <div class="why-text">
+              <h4>Special Lunch </h4>
+              <p>our speciality in lunch</p>
+              <h5>$18.79</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 special-grid lunch">
+          <div class="gallery-single fix">
+            <img src="images/img-06.jpg" class="img-fluid" alt="Special Lunch 3">
+            <div class="why-text">
+              <h4>Special Lunch </h4>
+              <p>our speciality in lunch</p>
+              <h5>$20.79</h5>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Dinner -->
+        <div class="col-lg-4 col-md-6 special-grid dinner">
+          <div class="gallery-single fix">
+            <img src="images/img-07.jpg" class="img-fluid" alt="Special Dinner 1">
+            <div class="why-text">
+              <h4>Special Dinner </h4>
+              <p>Our Speciality in Dinner</p>
+              <h5>$25.79</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 special-grid dinner">
+          <div class="gallery-single fix">
+            <img src="images/img-08.jpg" class="img-fluid" alt="Special Dinner 2">
+            <div class="why-text">
+              <h4>Special Dinner </h4>
+              <p>our speciality in Dinner</p>
+              <h5>$22.79</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 special-grid dinner">
+          <div class="gallery-single fix">
+            <img src="images/img-09.jpg" class="img-fluid" alt="Special Dinner 3">
+            <div class="why-text">
+              <h4>Special Dinner </h4>
+              <p>our speciality in Dinner</p>
+              <h5>$24.79</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (required) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Isotope JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Initialize Isotope
+      var $grid = $('.special-list').isotope({
+        itemSelector: '.special-grid',
+        layoutMode: 'fitRows'
+      });
+
+      // Filter items on button click
+      $('.filter-button-group').on('click', 'button', function() {
+        var filterValue = $(this).attr('data-filter');
+        $grid.isotope({ filter: filterValue });
+        // Change active class on buttons
+        $('.filter-button-group button').removeClass('active');
+        $(this).addClass('active');
+      });
+    });
+  </script>
+</body>
+</html>

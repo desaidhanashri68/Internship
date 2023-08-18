@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+    }
+    .about-heading {
+      text-align: center;
+      padding: 50px 0;
+    }
+    .about-heading h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    .about-heading p {
+      font-size: 18px;
+      color: #777;
+    }
+    .contact-box {
+      background-color: #ffffff;
+      padding: 30px;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+      
+      border: 2px solid #ddd; /* Border added */
+    }
+    .contact-box h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-control {
+      border-radius: 5px;
+      padding: 15px;
+    }
+    .submit-button {
+      margin-top: 20px;
+      text-align: center;
+    }
+    #msgSubmit {
+      color: #008000;
+      display: none;
+    }
+    .map-iframe {
+      border: none; /* Remove iframe border */
+      height: 500px; /* Set the map's height */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="about-heading">
+      <h1>About Us</h1>
+      <p>We're excited to hear from you! Reach out to us for reservations, inquiries, or just to say hello.</p>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <!-- Map section -->
+        <div class="contact-box">
+          <h2 style="text-align: center;">Location</h2>
+          <iframe class="map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.085188953637!2d74.18154631539205!3d17.281245688672283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be77b8dd64da5e5%3A0x26a6776f3a768999!2sKarad%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1628772696744!5m2!1sen!2sin" width="100%" style="border:0;" allowfullscreen="" loading="lazy" height="300"></iframe>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <!-- Contact form section -->
+        <div class="contact-box">
+          <h2 style="text-align: center;">Contact Us</h2>
+           <form th:action="@{/contactsave}" method="post"  id="contactForm">
+          
+            <!-- Contact form fields and elements -->
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required data-error="Please enter your name">
+              <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" class="form-control" name="email" placeholder="Enter your email" required data-error="Please enter your email">
+              <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group">
+              <label for="guest">Number of Guests</label>
+              <select class="custom-select d-block form-control" id="guest" name="guest" required data-error="Please Select Person">
+                <option disabled selected>Please Select Person*</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+              <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea class="form-control" id="message" placeholder="Write your message" rows="4" data-error="Write your message" required name="message"></textarea>
+              <div class="help-block with-errors"></div>
+            </div>
+            <div class="submit-button">
+              <button class="btn btn-primary" id="submit" type="submit">Send Message</button>
+              <div id="msgSubmit" class="h3 hidden">Message sent successfully!</div>
+              <div class="clearfix"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Bootstrap JS (required) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Your additional JS code here -->
+</body>
+</html>

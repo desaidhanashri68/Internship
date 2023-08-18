@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Restaurant</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Lightbox CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+  <!-- Custom CSS -->
+  <style>
+     body {
+      background-color: #f5f5f5;
+      font-family: Arial, sans-serif;
+    }
+    .gallery-box {
+      margin-top: 40px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+    .heading-title {
+      margin-bottom: 20px;
+    }
+    .heading-title h2 {
+      color: #333;
+      font-size: 28px;
+      font-weight: bold;
+      text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+    }
+    .heading-title p {
+      color: #777;
+      font-size: 16px;
+    }
+    .tz-gallery .row > div {
+      padding: 10px;
+    }
+    .img-fluid {
+      height: 250px;
+      width: 420px;
+      transition: transform 0.3s ease-in-out;
+    }
+    .img-fluid:hover {
+      transform: scale(1.1); /* Increase the size of the image on hover */
+    }
+    .tz-gallery .row > div {
+  padding: 10px;
+  border: 1px solid #ddd; /* Add a border to each image */
+  border-radius: 5px; /* Rounded corners for the border */
+}
+
+  </style>
+</head>
+<body>
+  <!-- Start Gallery 1 -->
+  <div class="gallery-box">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="heading-title text-center">
+            <h2>Gallery </h2>
+            <p>Our Special Dishesh are here</p>
+          </div>
+        </div>
+      </div>
+      <div class="tz-gallery">
+        <div class="row">
+          <div class="col-sm-12 col-md-4 col-lg-4">
+            <a class="lightbox" href="images/gallery-img-01.jpg">
+              <img class="img-fluid" src="images/gallery-img-01.jpg" alt="Gallery Images" style="margin-left: 10px;">
+            </a>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-4">
+            <a class="lightbox" href="images/gallery-img-02.jpg">
+              <img class="img-fluid" src="images/gallery-img-02.jpg" alt="Gallery Images" style="margin-left: 20px;">
+            </a>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-4">
+            <a class="lightbox" href="images/gallery-img-03.jpg">
+              <img class="img-fluid" src="images/gallery-img-03.jpg" alt="Gallery Images" style="margin-left: 30px;">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Start Gallery 2 -->
+  <div class="gallery-box" style="margin-top: 270px; ">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12" >
+          
+        </div>
+      </div>
+      <div class="tz-gallery">
+        <div class="row">
+          <div class="col-sm-12 col-md-4 col-lg-4">
+            <a class="lightbox" href="images/gallery-img-04.jpg">
+              <img class="img-fluid" src="images/gallery-img-04.jpg" alt="Gallery Images"style="margin-left: 10px;">
+            </a>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-4">
+            <a class="lightbox" href="images/gallery-img-05.jpg">
+              <img class="img-fluid" src="images/gallery-img-05.jpg" alt="Gallery Images"style="margin-left: 20px;">
+            </a>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-4">
+            <a class="lightbox" href="images/img-03.jpg">
+              <img class="img-fluid" src="images/img-03.jpg" alt="Gallery Images"style="margin-left: 30px;">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+     
+    // Initialize the lightbox for all images with the "lightbox" class
+    lightbox.option({
+      'resizeDuration': 200,
+      'wrapAround': true,
+      'positionFromTop': 100
+    });
+  
+  </script>
+
+  <!-- Bootstrap JS (required) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Lightbox JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+  <!-- Your additional JS code here -->
+</body>
+</html>

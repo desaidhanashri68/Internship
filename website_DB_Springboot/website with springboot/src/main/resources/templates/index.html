@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Carousel with Background Image</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Custom CSS -->
+  <style>
+    /* Corousel CSS */
+    .carousel-item {
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    }
+    .carousel-caption {
+      bottom: 30%;
+    }
+
+    /* Navbar CSS */
+    .navbar-custom {
+      background-color: white;
+      color: black;
+    }
+    .navbar-custom .navbar-brand,
+    .navbar-custom .navbar-nav .nav-link {
+      color: black;
+    }
+    .navbar {
+      height: 80px;
+    }
+    .navbar-custom .navbar-toggler-icon {
+      background-color: black;
+    }
+    .navbar-nav .nav-item .nav-link:hover {
+    color: #E1306C;
+    }
+    /* Footer CSS */
+    .footer-area {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      padding: 60px 0;
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      mix-blend-mode: multiply;
+    }
+    .footer-area h3,
+    .footer-area p,
+    .footer-area a {
+      color: white;
+    }
+    .subscribe_form {
+      display: flex;
+      align-items: center;
+    }
+    .form_input {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      margin-right: 10px;
+      width: 100%;
+    }
+    .submit {
+      background-color: #E1306C;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .submit:hover {
+      background-color: #C11A5E;
+    }
+    .f-social li a {
+      display: inline-block;
+      background-color: #ffffff;
+      border-radius: 50%;
+      padding: 10px;
+      margin: 5px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .f-social li a:hover {
+      background-color: #E1306C;
+      color: white;
+    }
+
+
+    /* Add your custom styles here */
+    .carousel-inner .rounded-circle {
+      max-width: 120px; /* Increase the max-width for larger images */
+      height: auto;
+      margin: 0 auto;
+    }
+    .carousel-caption {
+      
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .carousel-caption h5, .carousel-caption h6, .carousel-caption p {
+      color: white;
+      margin: 5px 0;
+    }
+    /* Visible Carousel Control Arrows */
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: auto;
+      padding: 0;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 50%;
+      font-size: 16px; /* Reduce the font size for smaller arrows */
+    }
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      font-size: 16px; /* Adjust the font size to make the arrows smaller or larger */
+      color: white;
+    }
+
+
+
+    .circle-icon {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 10px;
+  }
+
+
+
+
+  .sticky-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+  
+    
+    
+
+    
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#"> <img src="images/logo.png"alt="Logo"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="menu">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contactpage">Contact us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gallerypage">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#reviewsCarousel">Reviews</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="loginpage">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="signuppage">Signup</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="carouselExample" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExample" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExample" data-slide-to="1"></li>
+      <li data-target="#carouselExample" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active" style="background-image: url('images/slide1.jpg');">
+        <div class="carousel-caption">
+          <h1>"Where Flavor Meets Elegance: Your Culinary Journey Begins Here"</h1>
+          <p>Savor exquisite flavors, crafted with care. Experience culinary delight in every bite at our restaurant.</p>
+        </div>
+      </div>
+      <div class="carousel-item" style="background-image: url('images/slide2.jpg');">
+        <div class="carousel-caption">
+          <h1>"Where Flavor Meets Elegance: Your Culinary Journey Begins Here"</h1>
+          <p>Savor exquisite flavors, crafted with care. Experience culinary delight in every bite at our restaurant.</p>
+        </div>
+      </div>
+      <div class="carousel-item" style="background-image: url('images/slide3.jpg');">
+        <div class="carousel-caption">
+          <h1>"Where Flavor Meets Elegance: Your Culinary Journey Begins Here"</h1>
+          <p>Savor exquisite flavors, crafted with care. Experience culinary delight in every bite at our restaurant.</p>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev" >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div><br><br>
+
+<!-- Start Customer Reviews -->
+<div class="customer-reviews-box" id="reviewsCarousel">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="heading-title text-center">
+          <h2>Customer Reviews</h2>
+          <p>regular customers giving reviews for our yammi food restaurant</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 mr-auto ml-auto text-center">
+        <div id="reviews" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner mt-4">
+            <div class="carousel-item text-center active">
+              <div class="img-box p-1 border rounded-circle m-auto">
+                <img class="d-block w-100 rounded-circle" src="images/profile-1.jpg" alt="">
+              </div>
+              <h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">Paul Mitchel</strong></h5>
+              <h6 class="text-dark m-0">Web Developer</h6>
+              <p class="m-0 pt-3" style="color: black;">"I visited this restaurant with high expectations, and I was not disappointed. The burger I had was a true delight for my taste buds. The patty was juicy and cooked to perfection, and the combination of toppings and sauces was simply mouthwatering. The brioche bun added a touch of sweetness that balanced out the savory flavors. The portion size was generous, and the presentation was inviting. I can confidently say that this burger is now one of my all-time favorites. If you're a burger enthusiast like me, you won't want to miss out on this culinary masterpiece!"</p>
+            </div>
+            <div class="carousel-item text-center">
+              <div class="img-box p-1 border rounded-circle m-auto">
+                <img class="d-block w-100 rounded-circle" src="images/profile-3.jpg" alt="">
+              </div>
+              <h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">Steve Fonsi</strong></h5>
+              <h6 class="text-dark m-0">Web Designer</h6>
+              <p class="m-0 pt-3" style="color: black;">"My recent dining experience at this restaurant left me thoroughly impressed. I opted for the pasta dish, and it exceeded my expectations in every way. The pasta was cooked al dente, and the sauce was a perfect blend of rich tomato flavors and aromatic herbs. What truly set this dish apart was the use of fresh ingredients; the basil and Parmesan cheese added a delightful freshness to each bite. The portion size was just right, leaving me comfortably satisfied without feeling overly full. If you're in search of an authentic and flavorful pasta, this restaurant is a must-visit.".</p>
+            </div>
+            <div class="carousel-item text-center">
+              <div class="img-box p-1 border rounded-circle m-auto">
+                <img class="d-block w-100 rounded-circle" src="images/profile-7.jpg" alt="">
+              </div>
+              <h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">Daniel vebar</strong></h5>
+              <h6 class="text-dark m-0">Seo Analyst</h6>
+              <p class="m-0 pt-3" style="color: black;"> "As a food enthusiast and blogger, I'm always on the lookout for unique and visually stunning dishes. This restaurant managed to captivate my senses with their impressive dessert creation. The dessert not only looked like a work of art but tasted equally exquisite. The presentation was carefully thought out, and the play of colors and textures on the plate was a feast for the eyes. The combination of flavors, including the delicate sweetness of the cake, the tartness of the berries, and the creaminess of the accompanying sauce, was a harmonious symphony. This dessert isn't just food; it's an experience that speaks to both taste and aesthetics."</p>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#reviews" role="button" data-slide="prev" style="height: 50px; width: 50px; margin-top: 100px;">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#reviews" role="button" data-slide="next" style="height: 50px; width: 50px; margin-top: 100px;">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Customer Reviews -->
+
+
+<!-- Start Contact info -->
+<div class="contact-imfo-box" style="background-color: burlywood; margin-top: -200px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 text-center">
+        <div class="circle-icon">
+          <i class="fa fa-volume-control-phone" style="font-size: 24px; color: #333;"></i>
+        </div>
+        <div class="overflow-hidden">
+          <h4 style="color: #333;">Phone</h4>
+          <p class="lead" style="color: #555;">
+            7057076005
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4 text-center">
+        <div class="circle-icon">
+          <i class="fa fa-envelope" style="font-size: 24px; color: #333;"></i>
+        </div>
+        <div class="overflow-hidden">
+          <h4 style="color: #333;">Email</h4>
+          <p class="lead" style="color: #555;">
+            yammifood@gmail.com
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4 text-center">
+        <div class="circle-icon">
+          <i class="fa fa-map-marker" style="font-size: 24px; color: #333;"></i>
+        </div>
+        <div class="overflow-hidden">
+          <h4 style="color: #333;">Location</h4>
+          <p class="lead" style="color: #555;">
+            near ST stand karad
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- End Contact info -->
+
+  
+
+  
+  <!-- Start Footer -->
+    <footer class="footer-area ticky-footer" style="background-color: black;">
+        <div class="overlay"></div> <!-- Transparent overlay -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <h3>About Us</h3>
+                    <p>Welcome to [yammi food restaurant], where we believe in creating memorable dining experiences. Our passion for exquisite cuisine and warm hospitality is what sets us apart. With a diverse menu crafted from the freshest ingredients and a team dedicated to delivering exceptional service, we invite you to savor every moment at our restaurant. Whether it's a casual lunch, romantic dinner, or a special occasion, we're here to make your visit truly unforgettable.</p>
+                
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3>Opening hours</h3>
+                    <p><span class="text-color">Monday: </span>Closed</p>
+                    <p><span class="text-color">Tue-Wed :</span> 9:Am - 10PM</p>
+                    <p><span class="text-color">Thu-Fri :</span> 9:Am - 10PM</p>
+                    <p><span class="text-color">Sat-Sun :</span> 5:PM - 10PM</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3>Contact information</h3>
+                    <p class="lead">Near ST stand karad 415112</p>
+                    <p class="lead"><a href="#">+91 7057076005</a></p>
+                    <p><a href="#">yammifood@gmail.com</a></p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3>Subscribe</h3>
+                    <div class="subscribe_form">
+                        <form class="subscribe_form">
+                            <input name="EMAIL" id="subs-email" class="form_input" placeholder="Email Address..." type="email">
+                            <button type="submit" class="submit">SUBSCRIBE</button>
+                        </form>
+                    </div>
+                    <ul class="list-inline f-social" style="margin-top: 20px;">
+                        <li class="list-inline-item"><a href="https://www.facebook.com" style="color: blue;"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="https://www.twitter.com" style="color: green;"><i class="fa fa-twitter"></i></a></li>
+                        
+                        <li class="list-inline-item"><a href="https://www.google.com" style="color: red;"><i class="fa fa-google-plus"></i></a></li>
+                        <li class="list-inline-item"><a href="https://www.instagram.com" style="color: #E1306C;"><i class="fa fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p class="company-name">All Rights Reserved. &copy; 2023 <a href="#">Your Restaurant</a> Design By : 
+                        <a href="https://html.design/">Dhanashri</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <div class="scroll-to-top" style="display: none; position: fixed; bottom: 20px; right: 20px; z-index: 999;">
+        <a href="#" style="background-color: #E1306C; color: white; padding: 10px 15px; border-radius: 50%; text-decoration: none;">
+            <i class="fa fa-arrow-up"></i>
+        </a>
+    </div>
+
+  <!-- Bootstrap JS (required) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    var scrollToTopBtn = document.querySelector(".scroll-to-top");
+
+    window.addEventListener("scroll", function () {
+      if (window.pageYOffset > 300) {
+        scrollToTopBtn.style.display = "block";
+      } else {
+        scrollToTopBtn.style.display = "none";
+      }
+    });
+
+    scrollToTopBtn.addEventListener("click", function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+
+    $(document).ready(function () {
+      $('.carousel').carousel({
+        interval: 2000 // Change slide every 2 seconds
+      });
+    });
+
+
+    $(document).ready(function() {
+    $('#reviews').carousel();
+  });
+  
+  $(document).ready(function() {
+    $('#reviewsCarousel').carousel(); // Use a different ID for the carousel container
+  });
+  </script>
+</body>
+</html>
